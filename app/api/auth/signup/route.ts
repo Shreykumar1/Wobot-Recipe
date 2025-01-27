@@ -14,9 +14,6 @@ const connectToDatabase = async () => {
     await mongoose.connect(process.env.MONGO_URI || 'your_mongodb_uri');
 };
 
-export async function GET(req: NextRequest, res: NextApiResponse) {
-    return NextResponse.json({ message: 'Hello World' },{status:200});
-}
 
 export  async function POST(req: Request) {
     await connectToDatabase(); // Ensure database connection

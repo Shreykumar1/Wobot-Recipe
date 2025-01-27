@@ -31,9 +31,9 @@ const recipe = recipeData.recipe;
         servings={recipe.servings}
       />
       <div className="flex flex-wrap gap-2">
-        <Badge variant="secondary">{recipe.vegetarian ? "Vegetarian" : ""}</Badge>
-        <Badge variant="secondary">{recipe.glutenFree ? "Gluten-free" : ""}</Badge>
-        <Badge variant="secondary">{recipe.dairyFree ? "Dairy-free" : ""}</Badge>
+        {recipe.vegetarian && <Badge variant="secondary">Vegetarian</Badge>}
+        {recipe.glutenFree && <Badge variant="secondary">Gluten-free</Badge>}
+        {recipe.dairyFree && <Badge variant="secondary">Dairy-free</Badge>}
       </div>
       <div className="text-lg" dangerouslySetInnerHTML={{ __html: recipe.summary }} />
       <div className="grid md:grid-cols-2 gap-8">
