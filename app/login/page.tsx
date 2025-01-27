@@ -33,7 +33,7 @@ export default function Component() {
 
   useEffect(() => {
     if (data) {
-      router.push("/dashboard")
+      router.push("/recipes")
     }
   }, [data, dispatch, router])
 

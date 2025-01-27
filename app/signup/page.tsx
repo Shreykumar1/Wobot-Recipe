@@ -54,7 +54,7 @@ export default function SignUpPage() {
       {data && <Notification message="Login successful" status="success" />}
       <div className="bg-white p-8 rounded-3xl shadow-lg w-full max-w-md">
         <h1 className="text-3xl font-bold text-center text-red-600 mb-2">
-          Log in to Wobot Recipes
+          Sign Up to Wobot Recipes
         </h1>
         <p className="text-center text-gray-600 mb-6">
           manage your locations and addressess
@@ -108,7 +108,7 @@ export default function SignUpPage() {
         <p className="text-center mt-6">
           Already have an account?{" "}
           <Link href="/login" className="text-red-600 hover:underline">
-            Sign Up
+            Log In
           </Link>
         </p>
       </div>
