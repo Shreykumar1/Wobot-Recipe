@@ -8,12 +8,30 @@ import Notification from "../utils/notification";
 import Loading from "../utils/Loading";
 import { Trash2Icon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
+import { jwtDecode } from "jwt-decode";
+import getToken from "../utils/getToken";
 
 export default function page() {
   const [notification, setNotification] = useState<React.ReactNode | undefined>(undefined);
   const user = useSelector((state: RootState) => state.user.user);
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
+
+  const router = useRouter();
+  useEffect(() => {
+    const token = getToken();
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      const currentTime = Math.floor(Date.now() / 1000);
+
+      if (decodedToken.exp && decodedToken.exp < currentTime) {
+        router.push("/login");
+      } else {
+        // setLoadingPage(false);
+      }
+    } else router.push("/login");
+  }, []);
 
   useEffect(() => {
     fetchUser();

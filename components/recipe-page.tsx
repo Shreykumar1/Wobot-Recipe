@@ -7,8 +7,8 @@ import { ArrowLeft, Bookmark, ExternalLink } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 
-export default function RecipePage(recipeData: any) {
-  const recipe = recipeData.recipe;
+export default function RecipePage({recipeData, bookmarkClick, isBookmarked}: {recipeData: any, bookmarkClick: any, isBookmarked: any}) {
+  const recipe = recipeData;
   return (
     <div className="max-w-4xl mx-auto p-2 md:p-4 space-y-8">
       <div className="flex justify-between items-center">
@@ -18,9 +18,9 @@ export default function RecipePage(recipeData: any) {
             Back to Recipes
           </Link>
         </Button>
-        <Button variant="outline">
-          <Bookmark className="mr-2 h-4 w-4" />
-          Bookmark
+        <Button variant="outline" onClick={bookmarkClick} className={`flex items-center ${isBookmarked ? "text-red-500" : ""}`}>
+          <Bookmark className={`mr-2 h-4 w-4 `} />
+          {isBookmarked ? "Remove Bookmark" : "Bookmark"}
         </Button>
       </div>
       <RecipeHeader
