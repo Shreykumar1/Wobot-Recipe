@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import ReduxProvider from "./store/redus";
 import ReactQueryProvider from "./utils/reactQueryProvider";
 import "./globals.css";
-import { Pizza, ShoppingCart } from "lucide-react";
+import { Pizza, ShoppingCart, User2Icon } from "lucide-react";
 import  Link  from "next/link";
 
 const geistSans = localFont({
@@ -48,9 +48,9 @@ export default function RootLayout({
                 </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-red-700 flex items-center">
-                  <ShoppingCart className="mr-1 h-4 w-4" /> Cart 
-                </a>
+                <Link href="/user-details" className="hover:text-red-700 flex items-center">
+                  <User2Icon className="mr-1 h-4 w-4" /> User Details
+                </Link>
               </li>
             </ul>
           </nav>

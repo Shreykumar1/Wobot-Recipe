@@ -23,7 +23,7 @@ export default function Component() {
         <Loader2 className="w-12 h-12 animate-spin" />
       </div>
       <h1 className="mt-4 text-3xl font-semibold tracking-tight text-white">Loading</h1>
-      <p className="mt-2 text-sm text-red-100">Please wait while we prepare your dashboard</p>
+      <p className="mt-2 text-sm text-red-100">Please wait while we prepare your recipes</p>
     </div>
   )
 }
