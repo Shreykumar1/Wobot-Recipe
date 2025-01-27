@@ -30,7 +30,6 @@ export default function page() {
   const router = useRouter();
   useEffect(() => {
     const token = getToken();
-    console.log(token);
     if (token) {
       const decodedToken = jwtDecode(token);
       const currentTime = Math.floor(Date.now() / 1000);

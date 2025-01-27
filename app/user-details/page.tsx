@@ -35,8 +35,6 @@ export default function page() {
   }
 
   const handleBookmark = async (recipe: any) => {
-    console.log("Bookmarked recipe ID:", recipe);
-    console.log("User", user);
     if (user) {
       try {
         const response = await fetch("/api/bookmarks/addBookmark", {
@@ -61,7 +59,6 @@ export default function page() {
         }
 
         const data = await response.json();
-        console.log(data.message); // Success message
         setNotification(
           <Notification status="success" message={data.message} />
         );

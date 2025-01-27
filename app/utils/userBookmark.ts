@@ -16,7 +16,6 @@ export const fetchUser = async (email: string) => {
 
 export const addBookmark = async (email: string, bookmark: IBookmark) => {
   await dbConnect();
-  console.log("Bookmark", bookmark);
   
   try {
     const user = await User.findOne({ email });

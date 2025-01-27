@@ -11,7 +11,6 @@ export async function GET(req: NextApiRequest, res: NextApiResponse) {
 }
 
 export default async function POST(req: NextApiRequest, res: NextApiResponse) {
-    console.log("signupHandler called",req.body);
   await dbConnect();
 
   if (req.method === 'POST') {

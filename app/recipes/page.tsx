@@ -62,7 +62,6 @@ const fetchRecipes = async (
       },
     }
   );
-  console.log(response.data.results);
   return response.data.results;
 };
 
@@ -102,7 +101,6 @@ export default function RecipesPage() {
 
   useEffect(() => {
     const token = getToken();
-    console.log(token);
     if (token) {
       const decodedToken = jwtDecode(token);
       const currentTime = Math.floor(Date.now() / 1000);
@@ -122,7 +120,6 @@ export default function RecipesPage() {
   };
 
   async function fetchUser() {
-    console.log("User", user);
     if (user) {
       try {
         const response = await fetch(`/api/user/${user.user.email}`);
@@ -136,8 +133,6 @@ export default function RecipesPage() {
   }
 
   const handleBookmark = async (recipe: any) => {
-    console.log("Bookmarked recipe ID:", recipe);
-    console.log("User", user);
     if (user) {
       try {
         const response = await fetch("/api/bookmarks/addBookmark", {
@@ -162,7 +157,6 @@ export default function RecipesPage() {
         }
 
         const data = await response.json();
-        console.log(data.message); // Success message
         setNotification(
           <Notification status="success" message={data.message} />
         );

@@ -1,5 +1,4 @@
 export function Instructions({ instructions }: { instructions: any }) {
-  console.log(instructions);
   
   
     return (

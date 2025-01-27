@@ -20,7 +20,6 @@ export  async function POST(req: Request) {
     
     if (req.method === 'POST') {
         const body = await req.json();
-        console.log("signupHandler called",body);
         const { email, password } = body;
 
         if (!email || !password) {

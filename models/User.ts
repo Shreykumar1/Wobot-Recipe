@@ -25,7 +25,6 @@ const UserSchema: Schema = new Schema({
   bookmarks: { type: [IBookmarkSchema], default: [] },
 });
 
-console.log("UserSchema", mongoose.models)
 // Check if the model already exists to avoid overwriting
 const User = mongoose.models.User || mongoose.model<IUser>('User', UserSchema);
 
