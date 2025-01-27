@@ -5,14 +5,7 @@ import Link from "next/link";
 export default function SimpleLandingPage() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      <header className="w-full py-4 px-4 sm:px-6 lg:px-8 bg-red-600">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <ShoppingCart className="h-6 w-6 text-white" />
-            <span className="text-xl font-bold text-white">Wobot Recipes</span>
-          </div>
-        </div>
-      </header>
+
       <main className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-center">
         <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
           Welcome to Wobot Recipes
@@ -23,7 +16,7 @@ export default function SimpleLandingPage() {
         </p>
         <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
           <div className="rounded-md shadow">
-            <Link href="/dashboard">
+            <Link href="/recipes">
               <Button size="lg" className="w-full bg-red-600 hover:bg-red-700">
                 Get Started
               </Button>
